@@ -21,7 +21,7 @@ module.exports = {
           }, forMail ? process.env.JWT_EMAIL_SECRET: process.env.JWT_SECRET, { expiresIn: 60 * 60 * 24 * 7 }); // Week
     },
 
-    verify: (encoded, email=false) => {
+    verify: (encoded, forMail=false) => {
         return jwt.verify(encoded, forMail ? process.env.JWT_EMAIL_SECRET: process.env.JWT_SECRET)
     }
 
