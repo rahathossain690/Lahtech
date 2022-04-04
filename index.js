@@ -5,8 +5,13 @@ const app = express()
 const dotenv = require('dotenv')
 dotenv.config()
 
-// TODO: proxy
+// TODO: CORS
 // TODO: App limiter
+
+const routes = require('./route')
+
+app.use(express.json())
+app.use(routes)
 
 const database = require('./models')
 
